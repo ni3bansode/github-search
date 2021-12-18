@@ -1,0 +1,139 @@
+<form class="search-container">
+
+    <div class="row">
+
+        <div class="col-md-8"> <input type="text" id="search-bar" name="username"
+                placeholder="Search git users with username" [(ngModel)]="username"></div>
+        <div class="col-md-4">
+            <button pButton pRipple type="search" icon="pi pi-search" (click)="findProfile()"
+                class="p-button-rounded"></button>
+        </div>
+    </div>
+
+</form>
+<p-card styleClass="p-card-shadow" *ngIf="profile">
+    <div class="container ">
+        <div class="row d-flex">
+            <div class="card p-3 py-4">
+                <div class="text-center">
+                    <img src="{{profile.avatar_url}}" width="100" class="rounded-circle">
+                </div>
+                <div class="text-center mt-3">
+                    <h5 class="mt-2 mb-0">{{profile.name}}</h5> <span>{{profile.login}}</span>
+                    <div class="px-4 mt-1">
+                        <p class="fonts">{{profile.bio}}</p>
+                    </div>
+                    <ul class="social-list">
+                        <li>
+                            <p class="clearfix">
+                                <a href="{{profile.html_url}}" target="_blank"
+                                    class="btn btn-sm btn-warning pull-right">View Profile on github</a>
+                            </p>
+                        </li>
+                    </ul>
+
+                    <div class="mt-2 text-center">
+                        <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+                            <div class="stats">
+                                <h6 class="mb-0">Followers</h6> <span>{{profile.followers}}</span>
+                            </div>
+                            <div class="stats">
+                                <h6 class="mb-0">Following</h6> <span>{{profile.following}}</span>
+                            </div>
+                            <div class="stats">
+                                <h6 class="mb-0"> Public gists</h6> <span>{{profile.public_gists}}</span>
+                            </div>
+                            <div class="stats">
+                                <h6 class="mb-0">Public Repos</h6> <span>{{profile.public_repos}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="buttons"> <button class="btn btn-outline-primary px-4"
+                            (click)="viewProfile(profile)">View</button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</p-card>
+
+<p-dialog header="User Details" [(visible)]="display" [style]="{width: '50vw'}">
+    <table class="table table-striped" *ngIf="profile">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+
+
+                <td>Avatar Url</td>
+                <td>{{profile.avatar_url}}</td>
+            </tr>
+
+            <tr>
+                <td>Bio</td>
+                <td>{{profile.bio}}</td>
+            </tr>
+            <tr>
+                <td>Blog</td>
+                <td>{{profile.blog}}</td>
+            </tr>
+            <tr>
+                <td>Company</td>
+                <td>{{profile.company}}</td>
+            </tr>
+            <tr>
+                <td>Created At</td>
+                <td>{{profile.created_at}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{profile.email}}</td>
+            </tr>
+            <tr>
+                <td>Events Url</td>
+                <td>{{profile.events_url}}</td>
+            </tr>
+            <tr>
+                <td>Followers</td>
+                <td>{{profile.followers}}</td>
+            </tr>
+            <tr>
+                <td>Followers Url</td>
+                <td>{{profile.followers_url}}</td>
+            </tr>
+            <tr>
+                <td>Gists Url</td>
+                <td>{{profile.gists_url}}</td>
+            </tr>
+            <tr>
+                <td>Gravatar Id</td>
+                <td>{{profile.gravatar_id}}</td>
+            </tr>
+            <tr>
+                <td>Hireable</td>
+                <td>{{profile.hireable}}</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{profile.name}}</td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td>{{profile.location}}</td>
+            </tr>
+            <tr>
+                <td>Twitter Username</td>
+                <td>{{profile.twitter_username}}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+</p-dialog>

@@ -1,0 +1,26 @@
+<div class="p-grid " style="margin-top:12%;margin-left:8%">
+    <div class="p-col p-md-6">
+
+        <p-card header="GitHub Search Users" subheader="You can find a user you want to"
+            [style]="{width: '360px','height':'270px','background':'#242222'}" styleClass="p-card-shadow">
+            <div class="col-xs-1" align="center">
+                <i class="pi pi-github " style="font-size: 5rem;color:white;"></i><br><br>
+                <p-button label="Search" icon="pi pi-search" [routerLink]="['/search-users']" iconPos="right">
+                </p-button>
+            </div>
+
+        </p-card>
+    </div>
+    <div class="p-col p-md-6">
+        <p-card header="Search History" subheader="View All Serach History"
+            [style]="{width: '360px','height':'270px','background':'#f5b70f'}" styleClass="p-card-shadow">
+            <div class="col-xs-1" align="center">
+                <i class="pi pi-history" style="font-size: 5rem;color:white;"></i><br><br>
+                <p-button label="View" icon="pi pi-trash" [routerLink]="['/history']" iconPos="right">
+                </p-button>
+            </div>
+
+        </p-card>
+    </div>
+
+</div>

@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
 import { Table } from 'primeng/table';
-import { SerachService } from 'src/app/services/serach.service';
+import { SerachService } from '../../services/serach.service';
 export interface Country {
   name?: string;
   code?: string;

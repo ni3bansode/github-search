@@ -10,8 +10,8 @@ export class SerachService {
   apiUrl: string = 'http://localhost:3000/users';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   private username: string;
-  private clientid = 'f9930bac8603e3706094';
-  private clientsecret = 'babc0983c29af36207a67d1b70da8f1f1e636c30';
+  private clientid = '';
+  private clientsecret = '';
 
   constructor(private http: HttpClient) {
     this.username = "";
